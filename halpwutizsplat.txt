@@ -1,0 +1,17 @@
+param(
+[string]$firstname,
+[string]$surname,
+[string]$username,
+[string]$prepositions
+[Parameter(mandatory=$true)]
+[string]$newusername
+[Parameter(mandatory=$true)]
+[string]$Displayname = $lastname.Trim() +', ' + ($firstname.Trim() + ' ' + $Prepositions.Trim()).Trim()
+)
+
+Function Change-Username ($firstname, $surname, $username, $newusername, $prepositions)
+{
+
+Rename-ADObject $username -NewName $newusername
+set-adobject $newname -surname $surname.Trim() -displayname 
+}
