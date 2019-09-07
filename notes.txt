@@ -1,5 +1,12 @@
-git config --global user.name
-git config --global user.email
+#Setup the Project Folder
+#Command Listing
+pwd
+mkdir projects
+cd projects
+pwd
+
+git config --global user.name "name" 
+git config --global user.email "email@email.eee"
 git config --global -- list
 
 
@@ -9,3 +16,41 @@ git clone https://github.com/hoovermouse/bravenewgit.git
 cd bravenewgit/
 #show status 
 git status 
+
+#add an untracked item to staging area
+git add notes.txt
+
+#commit changes
+git commit -m "a comment" 
+
+#push naar remote repo master 
+git push origin master
+
+
+#Start a new repo from scratch
+git init new-project
+#you see a new-project folder is created
+ls
+cd new-project
+#you now see .folders
+ls -al
+#git status will show master branch and init commit, there is nothing to commit
+git status
+#add stuff
+#multi line commit message
+git commit
+#default edit is opened for commit message. save and close to finish commit. 
+#first commit is the root commit
+
+#add git to existing project
+#get example stuff from http://www.initializr.com/
+#stuff it in a folder web-project
+#got to that folder /d/git/web-project
+git init
+#add all files to staging area
+git add .
+git status
+#everything is staged recursively!
+git commit -m "first commit inline" 
+#hurray
+
