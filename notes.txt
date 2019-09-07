@@ -1,0 +1,11 @@
+git config --global user.name
+git config --global user.email
+git config --global -- list
+
+
+##clone a repo
+git clone https://github.com/hoovermouse/bravenewgit.git
+#go to masterbranch
+cd bravenewgit/
+#show status 
+git status 
