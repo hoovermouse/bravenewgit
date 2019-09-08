@@ -1,0 +1,43 @@
+CLIalways begins with azaz service verbaz  service subcomponent verb#install powershell code and..Install-Module -Name Az -AllowClobber -Scope AllUsersInstall-Module -Name Az -AllowClobber -Force #update the module#connect connect-azaccountManage Azure subscriptions and resources (15-20%)
+
+Manage Azure subscriptions
+
+##    assign administrator permissionsportal: Subscription > IAM > +Add
+##    configure cost center quotas and taggingYou can monitor costs by resource groups or tagstag with environment and value: billing code for example. and report from there. You can enforce tagging with azure policy. 
+##    configure Azure subscription policies at Azure subscription level
+Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'create a new policypolicies on github: https://github.com/Azure/azure-policy/New-AzureRMPolicyDefinition. Assign policy (to a scope)
+New-AzureRMPolicyAssignment   AZ module: $definition = New-AzPolicyDefinition -Name "{{policyName}}" -DisplayName "{{displayName}}" -description "{{description}}" -Policy 'https://raw.githubusercontent.com/Azure/azure-policy-samples/master/samples/{{path}}/azurepolicy.rules.json' -Parameter 'https://raw.githubusercontent.com/Azure/azure-policy-samples/master/samples/{{path}}/azurepolicy.parameters.json' -Mode All
+$definition
+$assignment = New-AzPolicyAssignment -Name <assignmentname> -Scope <scope> -PolicyDefinition $definition
+$assignment az policy definition create –-name "{{policyName}}" --display-name "{{displayName}}" --description "{{description}}" --rules 'https://raw.githubusercontent.com/Azure/azure-policy-samples/master/samples/{{path}}/azurepolicy.rules.json' –-params 'https://raw.githubusercontent.com/Azure/azure-policy-samples/master/samples/{{path}}/azurepolicy.parameters.json' -mode All
+
+az policy assignment create --name <assignmentname> --scope <scope> --policy "{{policyName}}" you can scope the whole subscription or a resource group, and even exclude resources in a resource group. 
+---Analyze resource utilization and consumption---
+
+##    configure diagnostic settings on resources
+    create baseline for resources
+    create and rest alerts
+    analyze alerts across subscription
+    analyze metrics across subscription
+    create action groups
+    monitor for unused resources
+    monitor spend
+    report on spend
+    utilize Log Search query functions
+    view alerts in Log Analytics
+
+Manage resource groups
+
+    use Azure policies for resource groups
+    configure resource locks
+    configure resource policies
+    identify auditing requirements
+    implement and set tagging on resource groups
+    move resources across resource groups
+    remove resource groups
+
+Managed role based access control (RBAC)
+
+    create a custom role
+    configure access to Azure resources by assigning roles
+    configure management access to Azure, troubleshoot RBAC, implement RBAC policies, assign RBAC Roles

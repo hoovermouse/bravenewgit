@@ -54,3 +54,59 @@ git status
 git commit -m "first commit inline" 
 #hurray
 
+#command line essentials on windows
+
+#where am i and what's here
+#  ~ is the home directory
+#PWD is present working directory 
+pwd 
+#there is no C: instead /c/
+ls
+#ls list current  directory. ls -l shows more detail
+ls -l 
+
+#change directory  cd
+cd folder/
+#you can tab-complete in the bashshell
+#windows have folders with spaces
+cd my\ Documents/
+#to backup a lot
+cd ../../..
+#back to user home directory
+cd ~ 
+cd
+#go to absolute location
+cd /d/git/web-project
+
+# where command is located
+#find where ls is located
+which ls
+
+#echo
+echo "hello world" 
+#output PATH value
+echo $PATH
+#and now combined
+echo "Our current PATH is $PATH"
+
+#Reviewing files with cat and less
+#how content of files
+cat new.txt
+#browse content with less
+less new.txt 
+q
+
+#touch move delete files
+#create a new file
+touch moar.txt
+#rename file with move
+mv moar.txt stuff.txt
+#remove
+rm stuff.txt
+#update timestamp with touch
+touch new.txt
+ls -l
+#you see the timestamp is updated
+
+#create and delete folders, recursively delete#create a folder mkdir newfolder#remove folderrmdir newfolder#create folder in folder in folder mkdir -p newfolder/nest/nested
+#remove recursivelyrm -rf newfolder#clear clear#exit and close the terminalexit #insert or append to file #create a file and add stuffecho "hello world" >>  hello.txt#append to fileecho "hello again" >> hello.txt#Overwriteecho "hi" > hello.txt#output to txtfilels -al > listing.txtcat listing.txt#tadaa#create and execute a shell script#where is bashwhich bash#open notepad++
